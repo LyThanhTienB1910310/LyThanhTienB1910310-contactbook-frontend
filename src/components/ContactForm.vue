@@ -68,12 +68,13 @@ export default {
                 ),
         });
         return {
-            contactLocal: this.contact,
+            contactLocal: this.contact?this.contact:{},
             contactFormSchema,
         };
     },
     methods: {
         submitContact() {
+            console.log(this.contactLocal)
             this.$emit("submit:contact", this.contactLocal);
         },
         deleteContact() {
